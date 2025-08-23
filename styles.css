@@ -58,6 +58,19 @@ body {
   border-radius: 10px;
 }
 
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-wrapper p {
+  margin: 0 auto;
+  font-size: 14px;
+  color: #777;
+}
+
 /* Main Content Container */
 .container {
   display: flex;
@@ -563,5 +576,9 @@ body {
     right: 10px;
     font-size: 1.3rem;
     padding: 0.4rem;
+  }
+
+  .footer-wrapper {
+    display: none;
   }
 }
