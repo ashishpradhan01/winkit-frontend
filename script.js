@@ -13,6 +13,7 @@ let searchArray = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   item = { cParent: null, cChild: null };
+  loadMoreBtn.hidden = true;
 });
 
 input.addEventListener("input", debounce(showSuggestions, 300));
@@ -30,7 +31,7 @@ function showError(message) {
 // Toggle Show Offer filter
 showOfferBtn.onclick = () => {
   showOffer = !showOffer;
-  showOfferBtn.textContent = `Show Offer: ${showOffer ? "ON" : "OFF"}`;
+  showOfferBtn.textContent = `Filter Offers`;
   showOfferBtn.classList.toggle("active", showOffer);
   if (item.cParent && item.cChild) {
     fetchProducts(item.cParent, item.cChild);
@@ -141,6 +142,7 @@ async function fetchProducts(cParent, cChild, params = null) {
       const { data, pagination } = await res.json();
       if (pagination) {
         loadMoreBtn.disabled = false;
+        loadMoreBtn.hidden = false;
         handlePagination(pagination);
       } else {
         loadMoreBtn.disabled = true;
