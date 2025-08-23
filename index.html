@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Branding -->
+    <div class="branding-container">
+      <span>Wink<span class="branding-it">it</span></span>
+    </div>
+
+    <!-- Theme toggle button -->
+    <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+      🌓
+    </button>
+
+    <div class="app-wrapper">
+      <div class="container">
+        <nav class="sidebar" id="sidebar">
+          <div class="search-container">
+            <input
+              type="text"
+              id="search"
+              class="search-box"
+              placeholder="Type to search..."
+            />
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+        </nav>
+        <main class="content" id="content"></main>
+      </div>
+      <div class="button-continer">
+        <!-- Bottom filter and load buttons -->
+        <button id="showOfferBtn" class="bottom-btn left-btn">
+          Show Offer: OFF
+        </button>
+        <button id="loadMoreBtn" class="bottom-btn right-btn" disabled>
+          Load More
+        </button>
+      </div>
+    </div>
+    <script src="utility.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
