@@ -200,6 +200,15 @@ body {
   gap: 18px;
 }
 
+.app-description {
+  display: none;
+  background-color: var(--hover-bg);
+  border-radius: 5px;
+  padding: 0.8rem;
+  padding-bottom: 0;
+  color: var(--accent-color);
+}
+
 /* Product Card Styling  */
 .product-card {
   width: 160px;
@@ -533,11 +542,6 @@ body {
     min-height: auto;
   }
 
-  .product-card,
-  .product-card.skeleton {
-    width: 158px;
-  }
-
   .sidebar {
     width: 100%;
     border-right: none;
@@ -559,6 +563,15 @@ body {
   .content {
     padding: 0.75rem;
     justify-content: flex-start; /*center*/
+  }
+
+  .app-description {
+    display: block;
+  }
+
+  .product-card,
+  .product-card.skeleton {
+    width: 158px;
   }
 
   .product-card {
