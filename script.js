@@ -28,6 +28,47 @@ function showError(message) {
   `;
 }
 
+function openPopup() {
+  const popup = document.getElementById("imagePopup");
+  popup.style.display = "flex";
+}
+
+function closePopup() {
+  const popup = document.getElementById("imagePopup");
+  popup.style.display = "none";
+}
+
+document.addEventListener("click", (event) => {
+  if (event.target && event.target.id === "openPopupBtn") {
+    openPopup();
+  }
+});
+
+// Event listener for the close button inside the popup
+document.addEventListener("click", (event) => {
+  if (event.target && event.target.classList.contains("close-btn")) {
+    closePopup();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  const popup = document.getElementById("imagePopup");
+  if (event.target === popup) {
+    closePopup();
+  }
+});
+
+function showLocationError(message) {
+  content.innerHTML = `
+    <div class="error-message">
+      <h3>⚠️ ${message}</h3>
+      <button id="openPopupBtn" class="bottom-btn">
+          Give Location Permission
+        </button>
+    </div>
+  `;
+}
+
 // Toggle Show Offer filter
 showOfferBtn.onclick = () => {
   showOffer = !showOffer;
@@ -86,7 +127,7 @@ async function loadGeoLocation() {
     const cords = { lat: latitude.toFixed(6), lon: longitude.toFixed(6) };
     localStorage.setItem(GEO_CORDS_KEY, JSON.stringify(cords));
   } catch (err) {
-    showError(`Location Error: ${err.message}`);
+    showLocationError(`Location Error: ${err.message}`);
   }
 }
 
