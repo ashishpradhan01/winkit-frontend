@@ -5,6 +5,7 @@
   --accent-color: #00796b;
   --content-bg: #f7f7fa;
   --product-card-bg: #ffffff;
+  --skeleton-content: #e0e0e0;
   --border-color: #b2dfdb;
   --hover-bg: #e0f2f1;
   --error-bg: #ffebee;
@@ -19,6 +20,7 @@ body.dark {
   --accent-color: #26a69a;
   --content-bg: #1e1e1e;
   --product-card-bg: #2d2d2d;
+  --skeleton-content: #777;
   --border-color: #004d40;
   --hover-bg: #263238;
   --error-bg: #2e2e2e;
@@ -296,7 +298,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-color: #f0f0f0;
+  background-color: var(--product-card-bg);
   transform: none;
   cursor: default;
 }
@@ -306,7 +308,7 @@ body {
 }
 
 .product-card.skeleton .product-image-container {
-  background-color: #e0e0e0;
+  background-color: var(--skeleton-content);
   height: 140px;
   width: 100%;
   border-bottom: 1px solid #d0d0d0;
@@ -334,7 +336,7 @@ body {
 }
 
 .product-card.skeleton .product-name {
-  background-color: #e0e0e0;
+  background-color: var(--skeleton-content);
   height: 18px;
   border-radius: 4px;
   margin: 0;
@@ -354,7 +356,7 @@ body {
 .product-card.skeleton .product-unit,
 .product-card.skeleton .price-container .product-price,
 .product-card.skeleton .price-container .product-mrp {
-  background-color: #e0e0e0;
+  background-color: var(--skeleton-content);
   height: 14px;
   border-radius: 4px;
   width: 70%;
@@ -531,7 +533,8 @@ body {
     min-height: auto;
   }
 
-  .product-card {
+  .product-card,
+  .product-card.skeleton {
     width: 158px;
   }
 
